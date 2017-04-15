@@ -1,1 +1,1 @@
-# {learnrust}
+# Learn Rust

@@ -60,4 +60,66 @@ fn main() {
 
         println!("==arrays==\n");
     }
+
+    // slices
+    {
+        println!("==slices==\n");
+
+        let a = [0, 1, 2, 3, 4];
+        let complete = &a[..];
+        let middle = &a[1..4];
+
+        println!("a {}", a.len());
+        println!("complete {}", complete.len());
+        println!("middle {}", middle.len());
+
+        println!("==slices==\n");
+    }
+
+    // tuples
+    {
+        println!("==tuples==\n");
+
+        let _x = (1, "hello");
+        let _x: (i32, &str) = (1, "hello");
+
+        let mut x = (1, 2); // x: (i32, i32)
+        let y = (2, 3); // y: (i32, i32)
+        x = y;
+
+        let (x, _y, _z) = (1, 2, 3);
+        println!("x is {}", x);
+
+        // (0, ); // A single-element tuple
+        // (0); // A zero in parenthesis
+
+        let (y,) = (0,);
+
+        println!("y is {}", y);
+
+        println!("==tuples==\n");
+    }
+
+    // tuple indexing
+    {
+        println!("==tuple indexing==\n");
+        let tuple = (1, 2, 3);
+
+        let x = tuple.0;
+        let y = tuple.1;
+        let z = tuple.2;
+
+        println!("z is {}", z);
+
+        println!("==tuple indexing==\n");
+    }
+
+    // functions
+    {
+        println!("==functions==\n");
+        fn foo(x: i32) -> i32 {x}
+
+        let x: fn(i32) -> i32 = foo;
+        println!("==functions==\n");
+    }
 }
